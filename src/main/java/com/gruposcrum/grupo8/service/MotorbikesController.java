@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author danic
  */
 @RestController
-@RequestMapping("/api/Motorbikes")
+@RequestMapping("/api/Motorbike")
 public class MotorbikesController {
     @Autowired
     private MotorbikesService motorbikesService;
