@@ -48,6 +48,7 @@ public class MotorbikesController {
       public Motorbikes update(@RequestBody Motorbikes motorbikes) {return motorbikesService.update(motorbikes);};
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
       public void delete(@PathVariable("id") int IdMotorbike) {
           motorbikesService.deleteMotorbike(IdMotorbike);
       }  

@@ -48,6 +48,7 @@ public class ClientController {
       public Client update(@RequestBody Client client) {return clientService.update(client);};
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
       public void delete(@PathVariable("id") int IdClient) {
           clientService.deleteClient(IdClient);
      }   

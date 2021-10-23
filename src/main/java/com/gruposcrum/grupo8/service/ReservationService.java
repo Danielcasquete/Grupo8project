@@ -16,15 +16,24 @@ import org.springframework.stereotype.Service;
  *
  * @author danic
  */
+/**
+* clase para los sergvicios de reservation
+*/
 @Service
 public class ReservationService {
     @Autowired
     ReservationRepository reservationRepository;
-    
+/**
+* metodo obtener todas las reservaciones
+*/ 
   public List<Reservation> getAll() {return (List<Reservation>) reservationRepository.getAll();};
-  
+/**
+* metodo obtener reservacion por id
+*/  
   public Optional<Reservation> getReservation(int id) {return reservationRepository.getReservation(id);};
-  
+ /**
+* metodo guardar reservacion
+*/ 
   public Reservation save(Reservation reservation) { 
        if (reservation.getIdReservation()== null){
            return reservationRepository.save(reservation);
@@ -43,7 +52,9 @@ public class ReservationService {
  
     }
   
-  
+/**
+* metodo actualizar reservacion
+*/  
       public Reservation update (Reservation reservation){
         if (reservation.getIdReservation() != null){
             Optional<Reservation> e = reservationRepository.getReservation(reservation.getIdReservation());
@@ -70,7 +81,12 @@ public class ReservationService {
             return reservation;
         }
     }
-  
+
+/**
+* metodo borrar reservacion
+*/  
+      
+      
   public boolean deleteReservation (int id){
    
 

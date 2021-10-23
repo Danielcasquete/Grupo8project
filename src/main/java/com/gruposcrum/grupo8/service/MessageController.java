@@ -50,6 +50,7 @@ public class MessageController {
       public Message update(@RequestBody Message message) {return messageService.update(message);};
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
       public void delete(@PathVariable("id") int IdMessage) {
           messageService.deleteMessage(IdMessage);
       }    
