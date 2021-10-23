@@ -46,4 +46,46 @@ public class ClientService {
     }
   
   
+   public Client update (Client client){
+        if (client.getIdClient() != null){
+            Optional<Client> e = clientRepository.getClient(client.getIdClient());
+            if (!e.isEmpty()){
+                if (client.getName()!= null){
+                    e.get().setName(client.getName());
+                }
+                if (client.getAge()!= null){
+                    e.get().setAge(client.getAge());
+                }
+                if (client.getPassword()!= null){
+                    e.get().setPassword(client.getPassword());
+                }
+                
+                clientRepository.save(e.get());
+                return e.get();
+            }
+            else
+            {
+                return client;
+            }
+        }
+        else
+        {
+            return client;
+        }
+    }
+  
+  public boolean deleteClient (int id){
+   
+
+      
+      Boolean aBoolean = getClient(id).map(
+              client->{
+            clientRepository.delete(client);
+            return true;
+        }).orElse(false);
+        return aBoolean;
+   
+  }
+  
+  
 }
