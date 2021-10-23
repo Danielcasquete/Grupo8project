@@ -1,6 +1,6 @@
 function traerInformacion(){
 	$.ajax({    
-    url : 'http://localhost/api/Reservation/all',
+    url : 'http://144.22.228.170/api/Reservation/all',
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
@@ -47,7 +47,7 @@ function guardarInformacion(){
 		};
 		let datosJson = JSON.stringify(misDatos); 
 		$.ajax(    
-		'http://localhost/api/Reservation/save',
+		'http://144.22.228.170/api/Reservation/save',
 		{data: datosJson,
 		type : 'POST',
 		dataType : 'json',
@@ -78,7 +78,7 @@ function guardarInformacion(){
 
 function pintarSelectMotorbike(id){
 	$.ajax({    
-    url : 'http://localhost/api/Motorbike/all',
+    url : 'http://144.22.228.170/api/Motorbike/all',
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
@@ -108,7 +108,7 @@ function pintarSelectMotorbike(id){
 
 function pintarSelectClient(id){
 	$.ajax({    
-    url : 'http://localhost/api/Client/all',
+    url : 'http://144.22.228.170/api/Client/all',
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
@@ -137,7 +137,7 @@ function pintarSelectClient(id){
 	
 function pintarSelectStatus(ID){
 	$.ajax({    
-    url : 'http://localhost/api/Reservation/all',
+    url : 'http://144.22.228.170/api/Reservation/all',
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
@@ -196,7 +196,7 @@ function actualizarInformacion(){
 	};
 	let datosJson = JSON.stringify(misDatos); 
 	$.ajax(    
-    'http://localhost/api/Reservation/update',
+    'http://144.22.228.170/api/Reservation/update',
 	{data: datosJson,
     type : 'PUT',
     dataType : 'json',
@@ -218,13 +218,13 @@ function actualizarInformacion(){
 
 function editarRegistro (id){
 	$.ajax({    
-    url : 'http://localhost/api/Reservation/'+id,
+    url : 'http://144.22.228.170/api/Reservation/'+id,
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
   
     success : function(respuesta) {
-		console.log(respuesta+ "url" + "http://localhost/api/Reservation/"+id);
+		console.log(respuesta+ "url" + "http://144.22.228.170/api/Reservation/"+id);
         let miTabla = '<table>';
 			$("#startDate").val(respuesta.startDate);
 			$("#devolutionDate").val(respuesta.devolutionDate);
@@ -244,7 +244,7 @@ function editarRegistro (id){
 
 function eliminarRegistro(id){
 	$.ajax({    
-        url : 'http://localhost/api/Reservation/'+id,
+        url : 'http://144.22.228.170/api/Reservation/'+id,
         type : 'DELETE',
         dataType : 'json',
         contentType: "application/json; charset=utf-8",

@@ -1,6 +1,6 @@
 function traerInformacion(){
 	$.ajax({    
-    url : 'http://localhost/api/Message/all',
+    url : 'http://144.22.228.170/api/Message/all',
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
@@ -40,7 +40,7 @@ function guardarInformacion(){
 		};
 		let datosJson = JSON.stringify(misDatos); 
 		$.ajax(    
-		'http://localhost/api/Message/save',
+		'http://144.22.228.170/api/Message/save',
 		{data: datosJson,
 		type : 'POST',
 		dataType : 'json',
@@ -72,7 +72,7 @@ function guardarInformacion(){
 
 function pintarSelectMotorbike(id){
 	$.ajax({    
-    url : 'http://localhost/api/Motorbike/all',
+    url : 'http://144.22.228.170/api/Motorbike/all',
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
@@ -102,7 +102,7 @@ function pintarSelectMotorbike(id){
 
 function pintarSelectClient(id){
 	$.ajax({    
-    url : 'http://localhost/api/Client/all',
+    url : 'http://144.22.228.170/api/Client/all',
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
@@ -134,7 +134,7 @@ function pintarSelectClient(id){
 
 function eliminarRegistro(id){
 	$.ajax({    
-        url : 'http://localhost/api/Message/'+id,
+        url : 'http://144.22.228.170/api/Message/'+id,
         type : 'DELETE',
         dataType : 'json',
         contentType: "application/json; charset=utf-8",
@@ -152,13 +152,13 @@ function eliminarRegistro(id){
 
 function editarRegistro (id){
 	$.ajax({    
-    url : 'http://localhost/api/Message/'+id,
+    url : 'http://144.22.228.170/api/Message/'+id,
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
   
     success : function(respuesta) {
-		console.log(respuesta+ "url" + "http://localhost/api/Message/"+id);
+		console.log(respuesta+ "url" + "http://144.22.228.170/api/Message/"+id);
         let miTabla = '<table>';
 			$("#messageText").val(respuesta.messageText);
 			$("#idmessage").val(respuesta.idMessage);
@@ -179,7 +179,7 @@ function actualizarInformacion(){
 	};
 	let datosJson = JSON.stringify(misDatos); 
 	$.ajax(    
-    'http://localhost/api/Message/update',
+    'http://144.22.228.170/api/Message/update',
 	{data: datosJson,
     type : 'PUT',
     dataType : 'json',

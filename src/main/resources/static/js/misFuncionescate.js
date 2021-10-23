@@ -1,6 +1,6 @@
 function traerInformacion(){
 	$.ajax({    
-    url : 'http://localhost/api/Category/all',
+    url : 'http://144.22.228.170/api/Category/all',
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
@@ -36,7 +36,7 @@ function guardarInformacion(){
 		};
 		let datosJson = JSON.stringify(misDatos); 
 		$.ajax(    
-		'http://localhost/api/Category/save',
+		'http://144.22.228.170/api/Category/save',
 		{data: datosJson,
 		type : 'POST',
 		dataType : 'json',
@@ -67,7 +67,7 @@ function actualizarInformacion(){
 	};
 	let datosJson = JSON.stringify(misDatos); 
 	$.ajax(    
-    'http://localhost/api/Category/update',
+    'http://144.22.228.170/api/Category/update',
 	{data: datosJson,
     type : 'PUT',
     dataType : 'json',
@@ -88,7 +88,7 @@ function actualizarInformacion(){
 
 function eliminarRegistro(id){
 	$.ajax({    
-        url : 'http://localhost/api/Category/'+id,
+        url : 'http://144.22.228.170/api/Category/'+id,
         type : 'DELETE',
         dataType : 'json',
         contentType: "application/json; charset=utf-8",
@@ -105,13 +105,13 @@ function eliminarRegistro(id){
 
 function editarRegistro (id){
 	$.ajax({    
-    url : 'http://localhost/api/Category/'+id,
+    url : 'http://144.22.228.170/api/Category/'+id,
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
   
     success : function(respuesta) {
-		console.log(respuesta+ "url" + "http://localhost/api/Category/"+id);
+		console.log(respuesta+ "url" + "http://144.22.228.170/api/Category/"+id);
         let miTabla = '<table>';
 			$("#name").val(respuesta.name);
 			$("#description").val(respuesta.description);

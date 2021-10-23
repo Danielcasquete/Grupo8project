@@ -1,6 +1,6 @@
 function traerInformacion(){
 	$.ajax({    
-    url : 'http://localhost/api/Motorbike/all',
+    url : 'http://144.22.228.170/api/Motorbike/all',
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
@@ -43,7 +43,7 @@ function guardarInformacion(){
 		};
 		let datosJson = JSON.stringify(misDatos); 
 		$.ajax(    
-		'http://localhost/api/Motorbike/save',
+		'http://144.22.228.170/api/Motorbike/save',
 		{data: datosJson,
 		type : 'POST',
 		dataType : 'json',
@@ -79,7 +79,7 @@ function guardarInformacion(){
 
 function pintarSelectCategory(id){
 	$.ajax({    
-    url : 'http://localhost/api/Category/all',
+    url : 'http://144.22.228.170/api/Category/all',
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
@@ -110,13 +110,13 @@ function pintarSelectCategory(id){
 
 function editarRegistro (id){
 	$.ajax({    
-    url : 'http://localhost/api/Motorbike/'+id,
+    url : 'http://144.22.228.170/api/Motorbike/'+id,
     type : 'GET',
     dataType : 'json',
     contentType: "application/json; charset=utf-8",
   
     success : function(respuesta) {
-		console.log(respuesta+ "url" + "http://localhost/api/Motorbike/"+id);
+		console.log(respuesta+ "url" + "http://144.22.228.170/api/Motorbike/"+id);
         let miTabla = '<table>';
 			$("#brand").val(respuesta.brand);
 			$("#year").val(respuesta.year);
@@ -143,7 +143,7 @@ function actualizarInformacion(){
 	};
 	let datosJson = JSON.stringify(misDatos); 
 	$.ajax(    
-    'http://localhost/api/Motorbike/update',
+    'http://144.22.228.170/api/Motorbike/update',
 	{data: datosJson,
     type : 'PUT',
     dataType : 'json',
@@ -165,7 +165,7 @@ function actualizarInformacion(){
 
 function eliminarRegistro(id){
 	$.ajax({    
-        url : 'http://localhost/api/Motorbike/'+id,
+        url : 'http://144.22.228.170/api/Motorbike/'+id,
         type : 'DELETE',
         dataType : 'json',
         contentType: "application/json; charset=utf-8",
