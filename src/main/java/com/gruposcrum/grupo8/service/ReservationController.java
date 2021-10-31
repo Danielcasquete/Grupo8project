@@ -6,7 +6,10 @@
 package com.gruposcrum.grupo8.service;
 
 import com.gruposcrum.grupo8.entities.Category;
+import com.gruposcrum.grupo8.entities.CountClients;
 import com.gruposcrum.grupo8.entities.Reservation;
+import com.gruposcrum.grupo8.entities.StatusReservation;
+import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,4 +56,20 @@ public class ReservationController {
           reservationService.deleteReservation(IdReservation);
       }  
    
+       @GetMapping("/report-status")
+    public StatusReservation getReservas(){
+        return reservationService.reporteStatusServicio();
+    }
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+     public List<Reservation> getReservasTiempo (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo ) throws ParseException{
+         return reservationService.reporteTiempoServicio(dateOne, dateTwo);
+     }
+     
+     @GetMapping("/report-clients")
+     public List<CountClients> getClientes(){
+         return reservationService.reporteClientesServicio();
+     }
+  
+      
 }
